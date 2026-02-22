@@ -1,0 +1,153 @@
+{
+    "study_name": "ambient_ai_control_granularity",
+    "version": "v1",
+    "description": "Synthetic mini-study exploring how control granularity over ambient AI sensing affects comfort, trust, agency, and adoption intent.",
+    "random_seed": 42,
+    "research_question": "How does the granularity of control over ambient AI sensing affect perceived comfort, trust, sense of agency, and willingness to adopt?",
+    "hypotheses": [
+      {
+        "id": "H1",
+        "text": "Granular control leads to higher perceived agency than binary or no control.",
+        "type": "between_conditions"
+      },
+      {
+        "id": "H2",
+        "text": "Higher perceived agency is positively correlated with trust.",
+        "type": "correlational"
+      },
+      {
+        "id": "H3",
+        "text": "Binary control increases opt-out behavior compared to granular control.",
+        "type": "between_conditions_behavioral"
+      }
+    ],
+    "participants": {
+      "n_participants": 300,
+      "id_prefix": "P",
+      "attributes": {
+        "privacy_sensitivity": {
+          "label": "Privacy sensitivity",
+          "description": "Baseline concern about sensing",
+          "type": "ordinal",
+          "values": [1, 2, 3],
+          "value_labels": {
+            "1": "low",
+            "2": "medium",
+            "3": "high"
+          }
+        },
+        "tech_familiarity": {
+          "label": "Tech familiarity",
+          "description": "Comfort with new technology",
+          "type": "ordinal",
+          "values": [1, 2, 3],
+          "value_labels": {
+            "1": "low",
+            "2": "medium",
+            "3": "high"
+          }
+        },
+        "baseline_trust": {
+          "label": "Baseline trust",
+          "description": "General trust in AI systems",
+          "type": "ordinal",
+          "values": [1, 2, 3],
+          "value_labels": {
+            "1": "low",
+            "2": "medium",
+            "3": "high"
+          }
+        }
+      }
+    },
+    "conditions": {
+      "no_control": {
+        "label": "No control",
+        "control_type": "none",
+        "description": "Sensing is always on; no visibility into what is sensed; no ability to pause or edit.",
+        "capabilities": {
+          "visibility_into_sensing": false,
+          "pause_all_sensing": false,
+          "per_modality_controls": false,
+          "temporary_pauses": false,
+          "visible_indicators": false
+        }
+      },
+      "binary_control": {
+        "label": "Binary control",
+        "control_type": "on_off",
+        "description": "User can pause all sensing; no modality-level control.",
+        "capabilities": {
+          "visibility_into_sensing": true,
+          "pause_all_sensing": true,
+          "per_modality_controls": false,
+          "temporary_pauses": true,
+          "visible_indicators": true
+        }
+      },
+      "granular_control": {
+        "label": "Granular control",
+        "control_type": "per_modality",
+        "description": "User controls audio, vision, context; temporary pauses; visible indicators of sensing.",
+        "capabilities": {
+          "visibility_into_sensing": true,
+          "pause_all_sensing": true,
+          "per_modality_controls": true,
+          "temporary_pauses": true,
+          "visible_indicators": true
+        },
+        "modalities": ["audio", "vision", "context"]
+      }
+    },
+    "outcome_metrics": {
+      "comfort": {
+        "label": "Comfort",
+        "meaning": "Ease of coexisting with the system",
+        "type": "likert",
+        "scale_min": 1,
+        "scale_max": 5
+      },
+      "trust": {
+        "label": "Trust",
+        "meaning": "Belief system behaves as intended",
+        "type": "likert",
+        "scale_min": 1,
+        "scale_max": 5
+      },
+      "agency": {
+        "label": "Agency",
+        "meaning": "Perceived ability to influence sensing",
+        "type": "likert",
+        "scale_min": 1,
+        "scale_max": 5
+      },
+      "adoption_intent": {
+        "label": "Adoption intent",
+        "meaning": "Likelihood of regular use",
+        "type": "likert",
+        "scale_min": 1,
+        "scale_max": 5
+      }
+    },
+    "behavioral_metrics": {
+      "opt_out": {
+        "label": "Opt-out behavior",
+        "meaning": "Whether the participant chooses to pause/disable sensing during the scenario",
+        "type": "binary",
+        "values": [0, 1],
+        "value_labels": {
+          "0": "no_opt_out",
+          "1": "opt_out"
+        }
+      }
+    },
+    "assignment": {
+      "method": "balanced_random",
+      "target_counts": {
+        "no_control": 100,
+        "binary_control": 100,
+        "granular_control": 100
+      }
+    }
+  }
+  
