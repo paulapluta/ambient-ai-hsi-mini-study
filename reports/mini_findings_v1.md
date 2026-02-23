@@ -88,7 +88,7 @@ Opt-out behavior showed meaningful differentiation across conditions. Binary con
 
 ---
 
-## 5. Emerging Interpretation
+## 5. Interpretation
 
 Across conditions, granular control produced a substantial increase in perceived agency and a marked reduction in full system opt-out behavior, while only modestly influencing perceived trust and adoption intent. This pattern suggests that the primary function of human-side infrastructure may lie less in amplifying enthusiasm for ambient AI and more in preventing polarization and system rejection.
 
