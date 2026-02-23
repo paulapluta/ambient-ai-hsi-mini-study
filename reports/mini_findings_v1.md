@@ -1,7 +1,7 @@
 <div align="center">
 
 # Ambient AI Control Granularity Study
-**Paulina Pluta | February 2026**
+**Paulina Pluta | February 2026**  
 *Mini-Project Findings*
 
 </div>
@@ -80,7 +80,7 @@ Adoption intent showed minimal separation across conditions. Mean scores were ap
 
 Opt-out behavior showed meaningful differentiation across conditions. Binary control produced the highest opt-out rate (≈31%), followed by no control (≈26%), while granular control was associated with substantially lower system shutdown behavior (≈7%) (Figure 4).
 
-![Figure 4](figures/fig4_output.png)
+![Figure 4](figures/fig4_optout.png)
 
 *Figure 4. Opt-out rate by control condition. Bar chart displays the proportion of participants fully disabling or refusing the system across sensing control conditions. Error bars represent 95% confidence intervals within the simulated dataset.*
 
